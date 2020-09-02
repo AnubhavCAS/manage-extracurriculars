@@ -1,0 +1,51 @@
+{
+ "name": "manage-extracurriculars",
+ "version": "1.0.0",
+ "description": "Manage extracurriculars",
+ "main": "src/main.js",
+ "scripts": {
+  "postinstall": "electron-builder install-app-deps",
+  "dist": "electron-builder build",
+  "dist-lin": "electron-builder build --linux",
+  "dist-mac": "electron-builder build --mac",
+  "start": "electron ."
+ },
+ "build": {
+  "appId": "anubhav.manage.extracurriculars",
+  "productName": "Manage Extracurriculars",
+  "files": [
+   "src/**/*",
+   "node_modules/**/*",
+   "packages.json"
+  ],
+  "directories": {
+   "buildResources": "resources"
+  },
+  "win": {
+   "target": "portable",
+   "icon": "resources/icon.ico"
+  },
+  "linux": {
+   "target": [
+    "pacman"
+   ],
+   "icon": "resources/icon.png",
+   "synopsis": "Manage your extracurriculars",
+   "category": "Utility"
+  },
+  "mac": {
+  	"category": "public.app-category.utilities",
+  	"target": "dmg",
+  	"icon": "resources/icon.icns"
+  }
+ },
+ "author": "Anubhav Agarwal <anubhavagarwal033@gmail.com>",
+ "devDependencies": {
+  "electron": "^9.2.1",
+  "electron-builder": "^22.8.0"
+ },
+ "dependencies": {
+  "@fortawesome/fontawesome-free": "^5.14.0",
+  "sqlite3": "^5.0.0"
+ }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta charset="UTF-8">
+		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-js'; style-src 'self' 'unsafe-inline';">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/simple-sidebar.css" rel="stylesheet">
+		<link href="css/fontawesome.min.css" rel="stylesheet">
+		<link href="css/brands.min.css" rel="stylesheet">
+		<link href="css/solid.min.css" rel="stylesheet">
+		<link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
+		<link href="css/quill.snow.css" rel="stylesheet">
+		<link href="css/quill.bubble.css" rel="stylesheet">
+		<title>Manage Extracurriculars</title>
+</head>
+
+<body>
+
+	<div class="d-flex" id="wrapper">
+
+		<!-- Sidebar -->
+		<div class="bg-light border-right" id="sidebar-wrapper">
+			<div class="sidebar-heading">
+				Extracurriculars
+			</div>
+			<div class="list-group list-group-flush" id="sidebar-a">
+				<a href="#dashboard" class="list-group-item list-group-item-action bg-light" id="click-dash">Go to Dashboard</a>
+			</div>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid" id="container-tabs">
+				<div id="dashboard">
+					<div id="categoryList">
+					</div>
+					<br>
+					<div class="inline">
+						<input class="form-control w-25 inline" id="catName" spellcheck=”false” type="text" placeholder="Enter the category name here..." disabled> 
+						<button type="submit" class="btn btn-dark mb-2 inline" id="addCatButton" disabled>Add Category</button><br><br>
+						<div class="alert alert-danger hide" role="alert" id="addCatButton-alert"></div>
+					</div>
+				</div>
+				<div id="new-extracurricular" class="hide">
+					<h2 class="mt-4" id="new-extracurricular-head">Add a new extracurricular</h2>
+					<div class='card-body'>
+						<form> 
+							<div class="form-group">
+								<label for="new-extracurricular-name">Extracurricular name</label>
+								<input type="text" spellcheck=”false” class="form-control" id="new-extracurricular-name" placeholder="Enter extracurricuar name">
+							</div>
+							<div class="form-group">
+								<label for="new-extracurricular-datepicker">Date</label>
+								<input type="text" spellcheck=”false” class="form-control" id="new-extracurricular-datepicker" aria-describedby="new-extracurricular-datepicker-help" placeholder="Date...">
+								<small id="new-extracurricular-datepicker-help" class="form-text text-muted">You can choose multiple dates. Only the first one will be displayed in the dashboard view.</small>
+							</div>
+						    <div class="form-group">
+						    	<label for="new-extracurricular-additional">Additional information</label>
+						    	<div class="form-control" id="new-extracurricular-additional" aria-describedby="new-extracurricular-additional=help">
+						    		<div id="toolbar-container"></div>
+						    	</div>
+						    	<small id="new-extracurricular-additional-help" class="form-text text-muted">You can use to store any kind of information that you may require, such as writing what was done, your reflections or time spent.</small>
+						  	</div>
+						  	<input id="new-extracurricular-category" type="hidden" value="">
+							<button type="submit" id="new-extracurricular-submit" class="btn btn-dark">Add extracurricular</button>
+						</form>
+					</div>
+				</div>
+				<div id="view-extracurricular" class="hide">
+					<h4 class="mt-4" id="view-extracurricular-name"></h4>
+					<h6 id="view-extracurricular-category" style="padding-top: 10px;"><kbd class="dark">12/06/2034</kbd> <kbd class="dark">12/06/2023</kbd></h6>
+					<h7 id="view-extracurricular-date"><mark>12/06/2034</mark></h7><br><br>
+					<p id="view-extracurricular-info">Test test test</p><br><br>
+					<button class="btn btn-primary inline" id="modify-extracurricular">Modify</button> <button class="btn btn-danger inline" id="delete-extracurricular">Delete</button>
+					<br><br><div class="alert alert-danger hide" role="alert" id="view-extracurricular-alert"></div>
+				</div>
+			</div>
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- Bootstrap core JavaScript -->
+	<script nonce="js">if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.confirm.js"></script>
+	<script src="./js/bootstrap-datepicker.min.js"></script>
+	<script src="./js/quill.min.js"></script>
+	<script src="./js/bootstrap.bundle.min.js"></script>
+	<script src="./js/util.js"></script>
+	<script src="./js/custom.js"></script>
+	<script nonce="js">if (window.module) module = window.module;</script>
+</body>
+
+</html>
